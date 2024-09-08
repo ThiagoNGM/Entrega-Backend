@@ -1,3 +1,294 @@
 {
-  "products": []
+  "products": [
+    {
+      "id": "f48024fe",
+      "title": "Cien años de soledad",
+      "description": "Una obra maestra del realismo mágico escrita por Gabriel García Márquez.",
+      "code": "LIB001",
+      "price": 24.99,
+      "status": true,
+      "stock": 150,
+      "category": "Ficción"
+    },
+    {
+      "id": "e66c8a4e",
+      "title": "El código Da Vinci",
+      "description": "Un thriller de misterio de Dan Brown que explora secretos ocultos en la historia del arte.",
+      "code": "LIB002",
+      "price": 19.99,
+      "status": true,
+      "stock": 200,
+      "category": "Suspense"
+    },
+    {
+      "id": "7c86ae9d",
+      "title": "Orgullo y prejuicio",
+      "description": "Un clásico de la literatura inglesa de Jane Austen que explora las relaciones sociales y el amor.",
+      "code": "LIB003",
+      "price": 14.99,
+      "status": true,
+      "stock": 120,
+      "category": "Romántico"
+    },
+    {
+      "id": "3ee33af7",
+      "title": "1984",
+      "description": "Una distopía de George Orwell sobre un futuro totalitario y opresivo.",
+      "code": "LIB004",
+      "price": 22.99,
+      "status": true,
+      "stock": 180,
+      "category": "Ciencia Ficción"
+    },
+    {
+      "id": "fd81da70",
+      "title": "Harry Potter y la piedra filosofal",
+      "description": "El primer libro de la famosa saga de Harry Potter escrita por J.K. Rowling.",
+      "code": "LIB005",
+      "price": 29.99,
+      "status": true,
+      "stock": 300,
+      "category": "Fantasía"
+    },
+    {
+      "id": "1a5d27a6",
+      "title": "El Hobbit",
+      "description": "Una novela de J.R.R. Tolkien que narra las aventuras de Bilbo Baggins en la Tierra Media.",
+      "code": "LIB006",
+      "price": 18.99,
+      "status": true,
+      "stock": 140,
+      "category": "Fantasía"
+    },
+    {
+      "id": "3153e1f4",
+      "title": "El gran Gatsby",
+      "description": "Un clásico de F. Scott Fitzgerald que explora el glamour y la decadencia de la era del jazz.",
+      "code": "LIB007",
+      "price": 21.99,
+      "status": true,
+      "stock": 130,
+      "category": "Literatura Clásica"
+    },
+    {
+      "id": "a39e79e5",
+      "title": "Matar a un ruiseñor",
+      "description": "Una novela de Harper Lee que trata temas de racismo y justicia en el sur de los Estados Unidos.",
+      "code": "LIB008",
+      "price": 17.99,
+      "status": true,
+      "stock": 160,
+      "category": "Literatura Clásica"
+    },
+    {
+      "id": "a6884eaa",
+      "title": "Los juegos del hambre",
+      "description": "Una novela distópica de Suzanne Collins sobre una competición mortal en un futuro opresivo.",
+      "code": "LIB009",
+      "price": 19.99,
+      "status": true,
+      "stock": 170,
+      "category": "Ciencia Ficción"
+    },
+    {
+      "id": "630c41c6",
+      "title": "El Alquimista",
+      "description": "Una novela de Paulo Coelho sobre la búsqueda de los sueños y la auto-realización.",
+      "code": "LIB010",
+      "price": 15.99,
+      "status": true,
+      "stock": 190,
+      "category": "Ficción"
+    },
+    {
+      "id": "37e68e1b",
+      "title": "La sombra del viento",
+      "description": "Un thriller literario de Carlos Ruiz Zafón sobre un misterio literario en la Barcelona de la posguerra.",
+      "code": "LIB011",
+      "price": 23.99,
+      "status": true,
+      "stock": 150,
+      "category": "Misterio"
+    },
+    {
+      "id": "3ab49656",
+      "title": "Los pilares de la tierra",
+      "description": "Una novela histórica de Ken Follett que narra la construcción de una catedral en la Edad Media.",
+      "code": "LIB012",
+      "price": 26.99,
+      "status": true,
+      "stock": 130,
+      "category": "Histórica"
+    },
+    {
+      "id": "4a2e47a8",
+      "title": "Dune",
+      "description": "Una novela de ciencia ficción de Frank Herbert que explora temas de política, religión y ecología en un mundo desértico.",
+      "code": "LIB014",
+      "price": 22.99,
+      "status": true,
+      "stock": 120,
+      "category": "Ciencia Ficción"
+    },
+    {
+      "id": "5fdb4aa2",
+      "title": "La chica del tren",
+      "description": "Un thriller psicológico de Paula Hawkins sobre una mujer que se convierte en testigo de un crimen.",
+      "code": "LIB015",
+      "price": 20.99,
+      "status": true,
+      "stock": 160,
+      "category": "Suspense"
+    },
+    {
+      "id": "951eb16f",
+      "title": "El nombre del viento",
+      "description": "Una novela de fantasía de Patrick Rothfuss sobre la vida de un joven prodigio llamado Kvothe.",
+      "code": "LIB016",
+      "price": 24.99,
+      "status": true,
+      "stock": 110,
+      "category": "Fantasía"
+    },
+    {
+      "id": "db187c0c",
+      "title": "Las chicas de la 305",
+      "description": "Una novela contemporánea de María Dueñas que sigue las vidas entrelazadas de tres mujeres en una residencia de ancianos.",
+      "code": "LIB017",
+      "price": 17.99,
+      "status": true,
+      "stock": 140,
+      "category": "Contemporáneo"
+    },
+    {
+      "id": "b9404460",
+      "title": "El psicoanalista",
+      "description": "Un thriller psicológico de John Katzenbach sobre un psicoanalista que se convierte en el objetivo de un asesino.",
+      "code": "LIB018",
+      "price": 19.99,
+      "status": true,
+      "stock": 150,
+      "category": "Suspense"
+    },
+    {
+      "id": "858b94a3",
+      "title": "El hombre en el castillo",
+      "description": "Una novela de ciencia ficción alternativa de Philip K. Dick sobre un mundo donde los Aliados perdieron la Segunda Guerra Mundial.",
+      "code": "LIB019",
+      "price": 21.99,
+      "status": true,
+      "stock": 130,
+      "category": "Ciencia Ficción"
+    },
+    {
+      "id": "e1e0d11c",
+      "title": "La catedral del mar",
+      "description": "Una novela histórica de Ildefonso Falcones sobre la construcción de una catedral en la Barcelona medieval.",
+      "code": "LIB020",
+      "price": 25.99,
+      "status": true,
+      "stock": 120,
+      "category": "Histórica"
+    },
+    {
+      "id": "d1b70a33",
+      "title": "La chica del tren",
+      "description": "Un thriller psicológico de Paula Hawkins sobre una mujer que se convierte en testigo de un crimen.",
+      "code": "LIB021",
+      "price": 20.99,
+      "status": true,
+      "stock": 160,
+      "category": "Suspense"
+    },
+    {
+      "id": "0e3220ec",
+      "title": "Un monstruo viene a verme",
+      "description": "Una novela de Patrick Ness sobre un joven que enfrenta la enfermedad de su madre a través de un monstruo imaginario.",
+      "code": "LIB022",
+      "price": 18.99,
+      "status": true,
+      "stock": 140,
+      "category": "Ficción"
+    },
+    {
+      "id": "fa5c12c2",
+      "title": "El secreto",
+      "description": "Un libro de autoayuda de Rhonda Byrne sobre la ley de la atracción y cómo puede cambiar tu vida.",
+      "code": "LIB023",
+      "price": 16.99,
+      "status": true,
+      "stock": 180,
+      "category": "Autoayuda"
+    },
+    {
+      "id": "450851c8",
+      "title": "Los hombres que no amaban a las mujeres",
+      "description": "Una novela de misterio de Stieg Larsson sobre una investigación de desaparición y crimen en Suecia.",
+      "code": "LIB024",
+      "price": 19.99,
+      "status": true,
+      "stock": 170,
+      "category": "Misterio"
+    },
+    {
+      "id": "2ddbd3cf",
+      "title": "Bajo la misma estrella",
+      "description": "Una novela de John Green sobre el amor y la vida de dos jóvenes que luchan contra el cáncer.",
+      "code": "LIB025",
+      "price": 14.99,
+      "status": true,
+      "stock": 200,
+      "category": "Romántico"
+    },
+    {
+      "id": "3725b4ed",
+      "title": "La casa de los espíritus",
+      "description": "Una novela de Isabel Allende sobre una familia chilena y la historia de su país a través de lo sobrenatural.",
+      "code": "LIB026",
+      "price": 22.99,
+      "status": true,
+      "stock": 140,
+      "category": "Ficción"
+    },
+    {
+      "id": "edf790cd",
+      "title": "El arte de la guerra",
+      "description": "Un antiguo texto chino sobre estrategia militar y liderazgo atribuido a Sun Tzu.",
+      "code": "LIB027",
+      "price": 12.99,
+      "status": true,
+      "stock": 160,
+      "category": "Historia"
+    },
+    {
+      "id": "2c2a8ac4",
+      "title": "El diario de Ana Frank",
+      "description": "El diario de una joven judía que se escondió de los nazis durante la Segunda Guerra Mundial.",
+      "code": "LIB028",
+      "price": 15.99,
+      "status": true,
+      "stock": 150,
+      "category": "Biografía"
+    },
+    {
+      "id": "d6c084b8",
+      "title": "Sapiens: De animales a dioses",
+      "description": "Una historia de la humanidad desde la prehistoria hasta el presente escrita por Yuval Noah Harari.",
+      "code": "LIB029",
+      "price": 21.99,
+      "status": true,
+      "stock": 130,
+      "category": "Historia"
+    },
+    {
+      "id": "4809b79d",
+      "title": "El poder del ahora",
+      "description": "Un libro de Eckhart Tolle sobre la importancia de vivir en el presente para lograr la paz interior.",
+      "code": "LIB030",
+      "price": 18.99,
+      "status": true,
+      "stock": 170,
+      "category": "Autoayuda"
+    }
+  ]
 }

@@ -48,9 +48,9 @@ router.get('/products/:id', (req, res) => {
 
 router.post('/products', (req, res) => {
     let products = readProducts();
-    const { title, description, code, price, status, stock, category, thumbnails } = req.body;
+    const { title, description, code, price, status, stock, category } = req.body;
 
-    if (!title || !description || !code || !price || !status || !stock || !category || !thumbnails) {
+    if (!title || !description || !code || !price || !status || !stock || !category) {
         return res.status(400).json({ error: 'Datos inválidos' });
     }
 
@@ -63,7 +63,6 @@ router.post('/products', (req, res) => {
         status,
         stock,
         category,
-        thumbnails
     };
 
     products.push(newProduct);
@@ -74,7 +73,7 @@ router.post('/products', (req, res) => {
 router.put('/products/:id', (req, res) => {
     let products = readProducts();
     let productId = req.params.id;
-    const { title, description, code, price, status, stock, category, thumbnails } = req.body;
+    const { title, description, code, price, status, stock, category } = req.body;
     let updatedProduct = {
         id: productId,
         title,
@@ -84,7 +83,6 @@ router.put('/products/:id', (req, res) => {
         status,
         stock,
         category,
-        thumbnails
     };
     let productIndex = products.findIndex(product => product.id === productId);
     if (productIndex === -1) {
