@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos en Tiempo Real</title>
+</head>
+<body>
+    <h1>Productos en Tiempo Real</h1>
+    <ul id="product-list">
+    </ul>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        // Cargar productos iniciales
+        socket.on('initialProducts', (products) => {
+            const productList = document.getElementById('product-list');
+            productList.innerHTML = '';
+            products.forEach(product => {
+                const li = document.createElement('li');
+                li.textContent = `${product.title} - $${product.price}`;
+                productList.appendChild(li);
+            });
+        });
+
+        // Actualizar la lista de productos cuando se agregue uno nuevo
+        socket.on('updateProducts', (product) => {
+            const productList = document.getElementById('product-list');
+            const li = document.createElement('li');
+            li.textContent = `${product.title} - $${product.price}`;
+            productList.appendChild(li);
+        });
+
+        // Eliminar un producto de la lista
+        socket.on('removeProduct', (productId) => {
+            const productList = document.getElementById('product-list');
+            const items = productList.getElementsByTagName('li');
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].dataset.id === productId) {
+                    productList.removeChild(items[i]);
+                    break;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
