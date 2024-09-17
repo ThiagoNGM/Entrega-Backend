@@ -2,15 +2,15 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import __dirname from '../utils.js';
-import { promises as fs } from 'fs'; // Importa el módulo fs
+import { promises as fs } from 'fs';
 
 const router = express.Router();
 
-// Ruta para la vista de productos en tiempo real
+// Ruta para visualizar todos los produtos en tiempo real
 router.get('/realtimeproducts', async (req, res) => {
     const dataPath = path.join(__dirname, 'data/products.json');
 
-    // Función para obtener productos
+    // Función para obtener todos los productos
     async function getProducts() {
         try {
             const data = await fs.readFile(dataPath, 'utf-8');
@@ -22,7 +22,7 @@ router.get('/realtimeproducts', async (req, res) => {
     }
 
     const products = await getProducts();
-    res.render('realTimeProducts', { products }); // Renderiza la vista realTimeProducts.handlebars
+    res.render('realTimeProducts', { products });
 });
 
 export default router;
