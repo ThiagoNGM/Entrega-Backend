@@ -7,7 +7,7 @@ import { promises as fs } from 'fs';
 const router = express.Router();
 
 // Ruta para visualizar todos los produtos en tiempo real
-router.get('/realtimeproducts', async (req, res) => {
+router.get('/', async (req, res) => {
     const dataPath = path.join(__dirname, 'data/products.json');
 
     // Función para obtener todos los productos
