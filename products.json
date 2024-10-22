@@ -1,0 +1,103 @@
+
+[
+    {
+        "title": "Crimen y castigo",
+        "description": "Una novela de Fiódor Dostoyevski sobre la moralidad y la culpa de un joven estudiante que comete un asesinato.",
+        "code": "LIB033",
+        "price": 22.99,
+        "status": true,
+        "stock": 150,
+        "category": "Literatura Clásica",
+        "img": "images/crimen_y_castigo.jpg"
+    },
+    {
+        "title": "Los miserables",
+        "description": "Una novela épica de Victor Hugo sobre la redención y la injusticia en la sociedad francesa del siglo XIX.",
+        "code": "LIB034",
+        "price": 25.99,
+        "status": true,
+        "stock": 110,
+        "category": "Literatura Clásica",
+        "img": "images/los_miserables.jpg"
+    },
+    {
+        "title": "El señor de los anillos: La comunidad del anillo",
+        "description": "El primer volumen de la trilogía de fantasía épica de J.R.R. Tolkien.",
+        "code": "LIB035",
+        "price": 27.99,
+        "status": true,
+        "stock": 180,
+        "category": "Fantasía",
+        "img": "images/la_comunidad_del_anillo.jpg"
+    },
+    {
+        "title": "Memorias de una geisha",
+        "description": "Una novela de Arthur Golden que narra la vida de una joven que es vendida para ser geisha en Japón.",
+        "code": "LIB036",
+        "price": 19.99,
+        "status": true,
+        "stock": 140,
+        "category": "Ficción Histórica",
+        "img": "images/memorias_de_una_geisha.jpg"
+    },
+    {
+        "title": "Rebelión en la granja",
+        "description": "Una sátira política de George Orwell sobre la corrupción del poder en una granja de animales.",
+        "code": "LIB037",
+        "price": 14.99,
+        "status": true,
+        "stock": 160,
+        "category": "Ficción",
+        "img": "images/rebelion_en_la_granja.jpg"
+    },
+    {
+        "title": "El perfume",
+        "description": "Una novela de Patrick Süskind sobre un asesino en serie obsesionado con crear el perfume perfecto.",
+        "code": "LIB038",
+        "price": 18.99,
+        "status": true,
+        "stock": 130,
+        "category": "Suspense",
+        "img": "images/el_perfume.jpg"
+    },
+    {
+        "title": "La ladrona de libros",
+        "description": "Una novela de Markus Zusak ambientada en la Alemania nazi, narrada desde la perspectiva de la muerte.",
+        "code": "LIB039",
+        "price": 20.99,
+        "status": true,
+        "stock": 170,
+        "category": "Ficción Histórica",
+        "img": "images/la_ladrona_de_libros.jpg"
+    },
+    {
+        "title": "El caballero de la armadura oxidada",
+        "description": "Un libro de Robert Fisher sobre un caballero que debe despojarse de su armadura para descubrir su verdadero yo.",
+        "code": "LIB040",
+        "price": 13.99,
+        "status": true,
+        "stock": 200,
+        "category": "Autoayuda",
+        "img": "images/el_caballero_de_la_armadura_oxidada.jpg"
+    },
+    {
+        "title": "La elegancia del erizo",
+        "description": "Una novela de Muriel Barbery que explora la vida interior de una portera en un lujoso edificio parisino.",
+        "code": "LIB041",
+        "price": 16.99,
+        "status": true,
+        "stock": 180,
+        "category": "Ficción Contemporánea",
+        "img": "images/la_elegancia_del_erizo.jpg"
+    },
+    {
+        "title": "La guerra no tiene rostro de mujer",
+        "description": "Un libro de Svetlana Alexiévich que recoge testimonios de mujeres soviéticas que lucharon en la Segunda Guerra Mundial.",
+        "code": "LIB042",
+        "price": 21.99,
+        "status": true,
+        "stock": 140,
+        "category": "Historia",
+        "img": "images/la_guerra_no_tiene_rostro_de_mujer.jpg"
+    }
+]

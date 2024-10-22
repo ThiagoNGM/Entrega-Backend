@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/styles.css">
+
+</head>
+<body>
+  <div class="productInd">
+    <div class="contenedorImg">  
+      <img class="libroIndividual" src="{{product.img}}" alt={{product.title}}>
+    </div>
+    <div class="contenedorDescripcion">
+      <h1>{{product.title}}</h1>
+      <h5>Descripcion: {{product.description}}</h5>
+      <h4>Stock: {{product.stock}}</h4>
+      <h4>Codigo: {{product.code}}</h4>
+      <h4>Categoria: {{product.category}}</h4>
+      <div class="precioCarritoProducto">
+          <h2 class="card-title precioInd">${{product.price}}</h2> 
+          <button class="btn botonComprar" type="submit">Comprar</button>
+      </div>
+      <div class="botonesRetroceder">
+       <form action="/products" method="DELLETE">
+        <button class="btn botonRetroceder" type="submit">Salir</button>
+       </form>
+       <form action="/" method="DELLETE">
+        <button class="btn botonRetroceder" type="submit">Volver a la pagina principal</button>
+       </form>
+      </div>
+    </div>
+  </div>
+   
+</body>
+</html>

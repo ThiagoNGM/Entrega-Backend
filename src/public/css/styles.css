@@ -1,0 +1,172 @@
+body {
+    background: -webkit-linear-gradient(to top, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+    background: linear-gradient(to top, #EAEAEA, #DBDBDB, #F2F2F2, #EAEAEA);
+    font-family: "Caudex", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.ContainerCheckout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 5fr 0.5fr;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+.main {
+    grid-area: main;
+}
+
+.header {
+    grid-area: header;
+    align-items: center;
+}
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.navbarr {
+    background-color: white;
+    margin-top: 1%;
+    padding: 1%;
+    width: 80%;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.librosNavbar {
+    display: flex;
+    align-items: center;
+}
+
+.contenedorLibros {
+    display: flex;
+    margin: 1rem 7rem;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.contenedorLibrosCategory {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedorNewLibros {
+    display: flex;
+    margin: 1rem rem;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.cardLibro {
+    margin: 1% 3%;
+    text-decoration: none;
+}
+
+.routingLibros {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.precioCarrito {
+    display: flex;
+    justify-content: space-between;
+}
+
+.precioCarritoProducto {
+    display: flex;
+    justify-content: start;
+}
+
+.carrito {
+    width: 25px;
+}
+
+.imgCard {
+    height: 300px;
+}
+
+.descripcionCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.carritoNavbar {
+    width: 35px;
+}
+
+.imagenPrincipal {
+    width: 100%;
+    margin: 1% 0%;
+}
+
+.productInd {
+    display: flex;
+    margin: 1% 10%;
+    justify-content: center;
+    background-color: white;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+.libroIndividual {
+    width: 40%;
+}
+
+.contenedorImg {
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+
+.botonesRetroceder {
+    display: flex;
+    justify-content: space-between;
+    margin: 5% 0%;
+}
+
+.botonRetroceder:hover {
+    background-color: #ADA996;
+    color: white;
+}
+
+.botonRetroceder {
+    border: 1px solid black;
+}
+
+.botonComprar {
+    border: 1px solid black;
+}
+
+.botonComprar:hover {
+    background-color: #ADA996;
+    color: white;
+}
+
+.contenedorDescripcion {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.precioInd {
+    margin-right: 8%;
+}
+
+h1 {
+    text-align: center;
+    margin: 3%;
+}

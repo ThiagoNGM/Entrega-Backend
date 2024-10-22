@@ -1,0 +1,22 @@
+[
+    {
+        "title": "La ladrona de libros",
+        "description": "Una novela de Markus Zusak ambientada en la Alemania nazi, narrada desde la perspectiva de la muerte.",
+        "code": "LIB039",
+        "price": 20.99,
+        "status": true,
+        "stock": 170,
+        "category": "Ficción Histórica",
+        "img": "images/la_ladrona_de_libros.jpg"
+    },
+    {
+        "title": "El caballero de la armadura oxidada",
+        "description": "Un libro de Robert Fisher sobre un caballero que debe despojarse de su armadura para descubrir su verdadero yo.",
+        "code": "LIB040",
+        "price": 13.99,
+        "status": true,
+        "stock": 200,
+        "category": "Autoayuda",
+        "img": "images/el_caballero_de_la_armadura_oxidada.jpg"
+    }
+]

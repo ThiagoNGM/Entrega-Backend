@@ -21,3 +21,5 @@ socket.on('productList', (products) => {
         productList.appendChild(li);
     });
 });
+
+

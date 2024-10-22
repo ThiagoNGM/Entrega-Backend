@@ -1,111 +1,148 @@
 import express from 'express';
-import fs from 'fs';
+import ProductModel from '../models/product.models.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
 const router = express.Router();
 
-let productsFilePath = path.join(__dirname, 'data', 'products.json');
-
-function generarId(longitud = 8) {
-    const caracteres = '0123456789abcdef';
-    let id = '';
-    for (let i = 0; i < longitud; i++) {
-        const randomIndex = Math.floor(Math.random() * caracteres.length);
-        id += caracteres[randomIndex];
-    }
-    return id;
-}
-
-
-let readProducts = () => {
-    let data = fs.readFileSync(productsFilePath, 'utf8');
-    return JSON.parse(data).products;
-}
-
-let writeProducts = (products) => {
-    let jsonData = JSON.stringify({ products }, null, 2);
-    fs.writeFileSync(productsFilePath, jsonData, 'utf8');
-}
-
-router.get('/products', (req, res) => {
-    let products = readProducts();
-    res.json(products);
+router.get('/', async (req, res) => {
+    let page = parseInt(req.query.page);
+    let rows = parseInt(req.query.rows || 8);
+    let result = await ProductModel.paginate({}, { page, limit: rows, lean: true });
+    res.render('paginaPrincipal', result);
 });
 
-router.get('/products/:id', (req, res) => {
-    let products = readProducts();
-    const productIdBuscado = req.params.id;
-    const product = products.find(product => product.id === productIdBuscado);
-    if (!product) {
-        return res.status(404).json({ error: 'Producto no encontrado' });
-    }
-    res.json(product);
-});
+// Obtener todos los productos
+router.get('/products', async (req, res) => {
+    let page = parseInt(req.query.page);
+    let rows = parseInt(req.query.rows || 10);
+    let sort = req.query.sort || "desc";
 
-router.post('/products', (req, res) => {
-    let products = readProducts();
-    const { title, description, code, price, status, stock, category } = req.body;
-
-    if (!title || !description || !code || !price || !status || !stock || !category) {
-        return res.status(400).json({ error: 'Datos inválidos' });
+    if (sort !== "asc" && sort !== "desc") {
+        sort = "desc";
     }
 
-    const newProduct = {
-        id: generarId(),
-        title,
-        description,
-        code,
-        price,
-        status,
-        stock,
-        category,
-    };
+    if (!page) page = 1;
+    if (!page) page = 10;
 
-    products.push(newProduct);
-    writeProducts(products);
-    res.status(201).json(newProduct);
-});
+    let result = await ProductModel.paginate({}, { page, limit: rows, lean: true, sort: { price: sort } });
+    result.prevLink = result.hasPrevPage ? `http://localhost:8080/products?page=${result.prevPage}&rows=${rows}&sort=${sort}` : null;
+    result.nextLink = result.hasNextPage ? `http://localhost:8080/products?page=${result.nextPage}&rows=${rows}&sort=${sort}` : null;
+    result.isValid = !(page <= 0 || page > result.totalPages);
 
-router.put('/products/:id', (req, res) => {
-    let products = readProducts();
-    let productId = req.params.id;
-    const { title, description, code, price, status, stock, category } = req.body;
-    let updatedProduct = {
-        id: productId,
-        title,
-        description,
-        code,
-        price,
-        status,
-        stock,
-        category,
-    };
-    let productIndex = products.findIndex(product => product.id === productId);
-    if (productIndex === -1) {
-        return res.status(404).json({ error: 'Producto no encontrado' });
-    }
-
-    products[productIndex] = updatedProduct;
-    writeProducts(products);
-    res.status(204).json(updatedProduct)
+    res.render('products', result);
 });
 
 
-router.delete('/products/:id', (req, res) => {
-    let products = readProducts();
-    const productAEliminar = req.params.id;
-    const productIndex = products.findIndex(producto => producto.id === productAEliminar)
+// Obtener un producto por id
+router.get('/products/:id', async (req, res) => {
+    try {
+        let oneProduct = await ProductModel.findById(req.params.id);
+        if (!oneProduct) {
+            return res.status(404).render('error', { error: 'Producto no encontrado' });
+        }
+        oneProduct = oneProduct.toObject();
 
-    if (productIndex === -1) {
-        return res.status(404).json({ error: 'produto no encontrado' })
+        res.render('product', { product: oneProduct });
+    } catch (error) {
+        return res.status(404).render('error', { error: 'Error al buscar un producto' });
     }
+});
 
-    const deletedProduct = products.splice(productIndex, 1);
-    writeProducts(products);
-    res.status(204).json({ mensaje: 'Tarea eliminada', deletedProduct })
+// Obtener los productos por categoría
+
+router.get('/literaturaClasica', async (req, res) => {
+    try {
+        let products = await ProductModel.find({ category: "Literatura Clásica" }).lean();
+        res.render('productCategory', { products });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Error al obtener los productos de Literatura Clásica" });
+    }
+});
+router.get('/autoayuda', async (req, res) => {
+    try {
+        let products = await ProductModel.find({ category: "Autoayuda" }).lean();
+        res.render('productCategory', { products });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Error al obtener los productos de Literatura Clásica" });
+    }
+});
+router.get('/suspense', async (req, res) => {
+    try {
+        let products = await ProductModel.find({ category: "Suspense" }).lean();
+        res.render('productCategory', { products });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Error al obtener los productos de Literatura Clásica" });
+    }
+});
+router.get('/fantasia', async (req, res) => {
+    try {
+        let products = await ProductModel.find({ category: "Fantasía" }).lean();
+        res.render('productCategory', { products });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Error al obtener los productos de Literatura Clásica" });
+    }
+});
+router.get('/cienciaFiccion', async (req, res) => {
+    try {
+        let products = await ProductModel.find({ category: "Ciencia Ficción" }).lean();
+        res.render('productCategory', { products });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Error al obtener los productos de Literatura Clásica" });
+    }
+});
+router.get('/historia', async (req, res) => {
+    try {
+        let products = await ProductModel.find({ category: "Histórica" }).lean();
+        res.render('productCategory', { products });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Error al obtener los productos de Literatura Clásica" });
+    }
+});
+router.get('/ficcion', async (req, res) => {
+    try {
+        let products = await ProductModel.find({ category: "Ficción" }).lean();
+        res.render('productCategory', { products });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Error al obtener los productos de Literatura Clásica" });
+    }
+});
+
+//obtener el estado del render
+router.get('/statusQuery', async (req, res) => {
+
+    let page = parseInt(req.query.page);
+    let rows = parseInt(req.query.rows || 10);
+    let sort = req.query.sort || "desc"
+    if (!page) page = 1;
+    if (!page) page = 10;
+    let result = await ProductModel.paginate({}, { page, limit: rows, lean: true, sort: { price: sort } })
+    result.prevLink = result.hasPrevPage ? `http://localhost:8080/products?page=${result.prevPage}&rows=${rows}&sort=${sort}` : null;
+    result.nextLink = result.hasNextPage ? `http://localhost:8080/products?page=${result.nextPage}&rows=${rows}&sort=${sort}` : null;
+    res.json(result)
+});
+
+// Eliminación de un producto
+router.delete('/products/:id', async (req, res) => {
+    try {
+        const product = await ProductModel.findByIdAndDelete(req.params.id);
+        if (!product) {
+            return res.render('error', { error: 'Producto no encontrado o error al eliminar el producto' });
+        }
+        res.redirect('/products');
+    } catch (error) {
+        return res.status(404).render('error', { error: 'Error al eliminar el producto' });
+    }
 });
 
 export default router;

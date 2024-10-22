@@ -1,0 +1,20 @@
+
+<div class="contenedorLibros">
+    {{#each products}}
+    <div class="card cardLibro" style="width: 13rem;">
+    <a href="/products/{{this.id}}">
+        <img src="{{this.img}}" class="card-img-top imgCard" alt="{{this.title}}">
+    </a>
+    <div class="card-body descripcionCard">
+        <h4 class="card-title">{{this.title}}</h4>
+        <h6 class="card-title">Categoría: {{this.category}}</h6>
+        <h6 class="card-title">Stock: {{this.stock}}</h6>
+        <div class="precioCarrito">
+            <h4 class="card-title" style="color: black;">${{this.price}}</h4> 
+            <img src="/images/cart.svg" class="carrito" alt="Carrito">
+        </div>
+    </div>
+</div>
+
+    {{/each}}
+</div> 
