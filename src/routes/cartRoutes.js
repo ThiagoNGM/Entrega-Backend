@@ -18,11 +18,10 @@ router.get('/', async (req, res) => {
 //     // 2 ir al modelo ed productos y traer los datos de ese producto
 //     // 3 guardar este producto en la carpeta carts
 //     try {
-//         console.log('req.params.is: ', req.params.id)
 //         let oneProduct = await ProductModel.findById(req.params.id);
-//         console.log('oneProduct : ', oneProduct)
 //         await cartModel.create(oneProduct);
 
+//         res.render('products')
 
 //         res.status(200);
 //     } catch (error) {
