@@ -1,6 +1,15 @@
+import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import path from 'path';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+export const __dirname = dirname(fileURLToPath(import.meta.url));
 
-export default __dirname;
+import bcrypt from 'bcrypt';
+
+export const createHash = (password) => {
+    if (typeof password !== 'string') {
+        throw new Error('Password must be a string');
+    }
+    const salt = bcrypt.genSaltSync(10); // Generamos el salt
+    return bcrypt.hashSync(password, salt); // Usamos el salt generado
+};
+
+export const isValidPassword = (password, user) => bcrypt.compareSync(password, user.password);

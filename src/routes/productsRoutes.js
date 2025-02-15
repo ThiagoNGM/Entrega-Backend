@@ -1,5 +1,5 @@
 import express from 'express';
-import ProductModel from '../models/product.models.js';
+import ProductModel from '../daos/models/product.models.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -29,8 +29,8 @@ router.get('/products', async (req, res) => {
     if (!page) page = 10;
 
     let result = await ProductModel.paginate({}, { page, limit: rows, lean: true, sort: { price: sort } });
-    result.prevLink = result.hasPrevPage ? `http://localhost:8080/products?page=${result.prevPage}&rows=${rows}&sort=${sort}` : null;
-    result.nextLink = result.hasNextPage ? `http://localhost:8080/products?page=${result.nextPage}&rows=${rows}&sort=${sort}` : null;
+    result.prevLink = result.hasPrevPage ? `http://localhost:8081/products?page=${result.prevPage}&rows=${rows}&sort=${sort}` : null;
+    result.nextLink = result.hasNextPage ? `http://localhost:8081/products?page=${result.nextPage}&rows=${rows}&sort=${sort}` : null;
     result.isValid = !(page <= 0 || page > result.totalPages);
 
     res.render('products', result);

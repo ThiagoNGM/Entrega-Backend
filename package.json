@@ -1,1 +1,30 @@
-{"lockfileVersion":3,"requires":true,"packages":{},"type":"module","dependencies":{"dotenv":"^16.4.5","express":"^4.19.2","express-handlebars":"^8.0.1","method-override":"^3.0.0","mongoose":"^8.7.0","mongoose-paginate-v2":"^1.8.5","multer":"^1.4.5-lts.1","socket.io":"^4.7.5","uuid":"^10.0.0"}}
+{
+    "lockfileVersion": 3,
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node src/server.js"
+    },
+    "packages": {},
+    "type": "module",
+    "dependencies": {
+        "bcrypt": "^5.1.1",
+        "connect-mongo": "^5.1.0",
+        "cookie": "^1.0.2",
+        "cookie-parser": "^1.4.7",
+        "dotenv": "^16.4.5",
+        "express": "^4.19.2",
+        "express-handlebars": "^8.0.1",
+        "express-session": "^1.18.1",
+        "express-sessions": "^1.0.6",
+        "method-override": "^3.0.0",
+        "mongoose": "^8.7.0",
+        "mongoose-paginate-v2": "^1.8.5",
+        "multer": "^1.4.5-lts.1",
+        "parser": "^0.1.4",
+        "passport": "^0.7.0",
+        "passport-jwt": "^4.0.1",
+        "passport-local": "^1.0.0",
+        "socket.io": "^4.7.5",
+        "uuid": "^10.0.0"
+    }
+}
