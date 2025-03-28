@@ -1,5 +1,8 @@
+//este archivo contiene codigo del curso de Backend I
+
 import express from 'express';
 import ProductModel from '../daos/models/product.models.js';
+import { checkAdmin } from '../middlewares/checkAdmin.js';  // Asegúrate de que la ruta sea correcta
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -132,8 +135,7 @@ router.get('/statusQuery', async (req, res) => {
     res.json(result)
 });
 
-// Eliminación de un producto
-router.delete('/products/:id', async (req, res) => {
+router.delete('/products/:id', checkAdmin, async (req, res) => {
     try {
         const product = await ProductModel.findByIdAndDelete(req.params.id);
         if (!product) {
@@ -143,6 +145,10 @@ router.delete('/products/:id', async (req, res) => {
     } catch (error) {
         return res.status(404).render('error', { error: 'Error al eliminar el producto' });
     }
+});
+
+router.get('*', (req, res) => {
+    res.send('Ruta inexistente')
 });
 
 export default router;

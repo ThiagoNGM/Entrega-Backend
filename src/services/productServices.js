@@ -1,10 +1,18 @@
-import Services from "./service.manager.js";
-import { prodDao } from "../daos/mongodb/product.dao.js";
+import Services from "./servicesManager.js";
+import { prodDao } from "../daos/mongodb/productDao.js";
+import { prodRepository } from "../repository/product.repository.js"
 
 class ProductService extends Services {
-    constructor() {
-        super(prodDao);
-    }
-}
+  constructor() {
+    super(prodDao);
+  }
 
+  getProdById = async (id) => {
+    try {
+      return await prodRepository.getProdById(id);
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
+}
 export const prodService = new ProductService();

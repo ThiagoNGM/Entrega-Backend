@@ -3,16 +3,16 @@ export default class Controllers {
         this.service = service;
     }
 
-    async getAll(req, res, next) {
+    getAll = async (req, res, next) => {
         try {
             const response = await this.service.getAll();
             res.json(response);
         } catch (error) {
             next(error);
         }
-    }
+    };
 
-    async getById(req, res, next) {
+    getById = async (req, res, next) => {
         try {
             const { id } = req.params;
             const response = await this.service.getById(id);
@@ -20,17 +20,18 @@ export default class Controllers {
         } catch (error) {
             next(error);
         }
-    }
-    async create(req, res, next) {
+    };
+
+    create = async (req, res, next) => {
         try {
             const response = await this.service.create(req.body);
             res.json(response);
         } catch (error) {
             next(error);
         }
-    }
+    };
 
-    async update(req, res, next) {
+    update = async (req, res, next) => {
         try {
             const { id } = req.params;
             const response = await this.service.update(id, req.body);
@@ -38,8 +39,9 @@ export default class Controllers {
         } catch (error) {
             next(error);
         }
-    }
-    async delete(req, res, next) {
+    };
+
+    delete = async (req, res, next) => {
         try {
             const { id } = req.params;
             const response = await this.service.delete(id);
@@ -47,5 +49,5 @@ export default class Controllers {
         } catch (error) {
             next(error);
         }
-    }
+    };
 }

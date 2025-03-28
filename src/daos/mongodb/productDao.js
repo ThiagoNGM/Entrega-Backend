@@ -1,5 +1,5 @@
-import MongoDao from "./mongo.dao.js";
-import { ProductModel } from '../models/product.model.js';
+import MongoDao from "./mongoDao.js";
+import ProductModel from '../models/product.models.js';
 
 class ProductDaoMongo extends MongoDao {
     constructor() {

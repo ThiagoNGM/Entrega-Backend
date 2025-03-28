@@ -15,4 +15,8 @@ router.post('/', (req, res) => {
         .send('✅ Cookies agregadas correctamente');
 });
 
+router.get('*', (req, res) => {
+    res.send('Ruta inexistente')
+});
+
 export default router;

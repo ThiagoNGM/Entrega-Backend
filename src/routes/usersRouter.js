@@ -10,5 +10,8 @@ router.post("/login", userController.login);
 
 router.get("/current", [passportCall('current')], userController.privateData);
 
+router.get('*', (req, res) => {
+    res.send('Ruta inexistente')
+});
 
 export default router;
